@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Computer Components Order Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .form-group button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .form-group button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Order Form</h1>
+  <div class="form-group">
+    <label for="component">Component:</label>
+    <select id="component">
+      <option value="">Select a component</option>
+      <option value="RAM">RAM</option>
+      <option value="Motherboard">Motherboard</option>
+      <!-- Add more options as needed -->
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" min="1" value="1">
+  </div>
+  <div class="form-group">
+    <button onclick="submitOrder()">Submit Order</button>
+  </div>
+</div>
+<script>
+  function submitOrder() {
+    var component = document.getElementById('component').value;
+    var quantity = document.getElementById('quantity').value;
+    if (component && quantity) {
+      alert('You have ordered ' + quantity + ' ' + component);
+    } else {
+      alert('Please select a component and quantity.');
+    }
+  }
+</script>
+</body>
+</html>

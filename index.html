@@ -1,0 +1,429 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Computer Factory</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="The best computer component market you have visited so far!">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="left">
+                <ul title="Company Name" class="heading">
+                  <li class="f">F</li>
+                  <li class="a">A</li>
+                  <li class="c">C</li>
+                  <li class="t">T</li>
+                  <li class="o">O</li>
+                  <li class="r">R</li>
+                  <li class="y">Y</li>
+                  <li class="r">R</li>
+                  <li class="e">E</li>
+                  <li class="s">S</li>
+                  <li class="e">E</li>
+                  <li class="t">T</li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a title="Student Info" id="about" href="#" onclick="openPop1()">About Me</a></li>
+                    <li><a title="Mock sign-up" id="login" href="#" onclick="openPop2()">SingUp/LogIn</a></li>
+                    <li><time title="Current Time" id="cur_time">Time</time></li>
+                </ul>
+            </div>
+        </header>
+      <div class="menu">
+        <ul>
+          <li title="Add RAM to cart" id="ram"><button onclick="addRam()">RAM</button></li>
+          <li title="Add Motherboard to cart" id="mb"><button onclick="addMB()">MotherBoard</button></li>
+          <li title="Add Hard Drive to Card" id="hdd"><button onclick="addStore()">Storage</button></li>
+          <li title="Add Processor to Card" id="comp"><button onclick="addCompute()">Compute</button></li>
+          <li title="Add GPU to the cart" id="gpu"><button onclick="addGpu()">GPU</button></li>
+          <li title="Add a Power Supply to the cart" id="pow"><button onclick="addPow()">Power Supply</button></li>
+          <li title="Add Cables to the cart" id="cb"><button onclick="addCB()">Cables</button></li>
+          <li title="Add Computer Frame to cart " id="case"><button onclick="addFrame()">Computer Frame</button></li>
+          <li title="Add Monitor to cart" id="mon"><button onclick="addMon()">Monitor</button></li>
+          <li title="Add Peripherals like Keyboard and Mouse" id="peri"><button onclick="addPeri()">Peripherals</button></li>
+        </ul></div>
+        <!--Code for pop-up related to about us-->
+        <div class="popup1" id="popup1">
+          <h2>ABOUT ME</h2>
+          <p>
+            I am Khanna,
+            undergraduate student majoring in
+            Computer Science!
+            You are looking at Task 6 of
+            Web Application Development's
+            Advanced Workbook!
+          </p>
+          <button class="btnOK" onclick="closePop1()">OK</button>
+
+        </div>
+        <!--Code for pop-up related to Login/Signup-->
+        <div class="popup2" id="popup2">
+          <h2>LOGIN/SIGNUP</h2>
+          <label for="mail"> Username/Email
+            <input name="mail" id="mail" type="text" required>
+          </label>
+          <label for="pass"> Password
+            <input name="pass" id="pass" type="password" required>
+          </label>
+          <button class="btnOK" onclick="closePop2()">Submit</button>
+          <button class="btnOK" onclick="closePop2_2()">Cancel</button>
+          <p id="warn" class="warn">Please fill in the password and email fields!</p>
+        </div>
+      <div class="popup3" id="popup3">
+        <h2 id="welcome-msg">WELCOME!</h2>
+        <button class="btnOK" type="submit" onclick="closePop3()">OK</button>
+      </div>
+
+      <div id="main" class="image_here">
+        <h1 id="remove">THE CART IS EMPTY, HOW ABOUT STARTING WITH A FRAME FOR THE NEW PC…</h1>
+        <div id="ramBOX" class="BOXY disApp" >
+          <h1>RAM</h1>
+          <h2>Random Access Memory</h2>
+          <label>Select Brand
+            <select>
+              <option>Corsair</option>
+              <option>Crucial</option>
+              <option>Samsung</option>
+            </select>
+          </label>
+          <label>Type
+            <select id="RT">
+              <option value="DDR3">DDR3</option>
+              <option value="DDR4">DDR4</option>
+              <option value="DDR5">DDR5</option>
+            </select>
+          </label>
+          <label>Specification
+            <select id="RS">
+              <option value="4GB">4GB</option>
+              <option value="8GB">8GB</option>
+              <option value="16GB">16GB</option>
+              <option value="32GB">32GB</option>
+              <option value="64GB">64GB</option>
+            </select>
+          </label>
+          <button id="rmBTN" onclick="removeRam()">Remove</button>
+          <input type="button" onclick="addRamToCart()" value="Add">
+        </div>
+
+        <div id="mbBOX" class="BOXY disApp" >
+          <h1>MotherBoard</h1>
+          <h2>Computer's Nervous System</h2>
+          <label>Select Brand
+            <select>
+              <option>MSI</option>
+              <option>ASUS</option>
+              <option>GigaByte</option>
+            </select>
+          </label>
+          <label>Type
+            <select id="MT">
+              <option value="Mirco_ATX">Mirco ATX</option>
+              <option value="Mini_stx">Mini stx</option>
+              <option value="Extended_ATX">Extended ATX</option>
+            </select>
+          </label>
+          <label>Specification
+            <select id="MS">
+              <option value="B450_S2H">B450 S2H</option>
+              <option value="H610M-E_DDR4">H610M-E DDR4</option>
+              <option value="B450M_Pro-Vdh">B450M Pro-Vdh</option>
+              <option value="B450M-A_II">B450M-A II</option>
+              <option value="A320M-K">A320M-K</option>
+            </select>
+          </label>
+          <button onclick="removeMB()">Remove</button>
+          <input type="button" onclick="addMBToCart()" value="Add">
+        </div>
+
+        <div id="storeBOX" class="BOXY disApp">
+          <h1>Primary Storage</h1>
+          <label>Select Brand
+            <select>
+              <option>Western Digital</option>
+              <option>Kingston</option>
+              <option>Toshiba</option>
+            </select>
+          </label>
+          <label>Type
+            <select id="ST">
+              <option value="NVME">NVME</option>
+              <option value="SSD">SSD</option>
+              <option value="HDD">HDD</option>
+            </select>
+          </label>
+          <label>Specification
+            <select id="SS">
+              <option value="256GB">256GB</option>
+              <option value="512GB">512GB</option>
+              <option value="1TB">1TB</option>
+              <option value="2TB">2TB</option>
+              <option value="5TB">5TB</option>
+            </select>
+          </label>
+          <button onclick="removeStore()">Remove</button>
+          <input type="button" onclick="addStoreToCart()" value="Add">
+        </div>
+
+        <div id="computeBOX" class="BOXY disApp">
+          <h1>CPU</h1>
+          <h2>The Brain of a Computer</h2>
+          <label>Select Brand
+            <select>
+              <option>Intel</option>
+              <option>AMD</option>
+              <option>Snapdragon</option>
+            </select>
+          </label>
+          <label>Type
+            <select id="IT">
+              <option value="ARM">ARM</option>
+              <option value="x86-32">x86-32</option>
+              <option value="x86-64" >x86-64</option>
+            </select>
+          </label>
+          <label>Specification
+            <select id="IS">
+              <option value="i3_1300K">i3(13th Gen.)</option>
+              <option value="i9_1300K">19(13th Gen.)</option>
+              <option value="i9_1400K">i9(14th Gen.)</option>
+              <option value="Ryzen_3600">Ryzen 3600</option>
+              <option value="i3_1400K">i3(14th Gen)</option>
+            </select>
+          </label>
+          <button onclick="removeCompute()">Remove</button>
+          <input type="button" onclick="addComputeToCart()" value="Add">
+        </div>
+
+        <div id="gpuBOX" class="BOXY disApp">
+          <h1>Graphical Processing Unit</h1>
+          <label>Select Brand
+            <select>
+              <option>Nvidia</option>
+              <option>AMD</option>
+              <option>EVGA</option>
+            </select>
+          </label>
+          <label>Type
+            <select>
+              <option>AI/ML</option>
+              <option>Gaming</option>
+              <option>Server-Farms</option>
+            </select>
+          </label>
+          <label>Specification
+            <select id="GPUS">
+              <option value="H100">H100</option>
+              <option value="4090">4090</option>
+              <option value="4090Super">4090 Super</option>
+              <option value="Radeon">Radeon</option>
+              <option value="3070">3070</option>
+            </select>
+          </label>
+          <button onclick="removeGPU()">Remove</button>
+          <input type="button" onclick="addGpuToCart()" value="Add">
+        </div>
+
+        <div id="powBOX" class="BOXY disApp">
+          <h1>Power Supply</h1>
+          <label>Select Brand
+            <select>
+              <option>Zebronics</option>
+              <option>Geonix</option>
+              <option>Artis</option>
+            </select>
+          </label>
+          <label>Type
+            <select>
+              <option>Silent</option>
+              <option>Heavy Duty</option>
+              <option>Compact</option>
+            </select>
+          </label>
+          <label>Specification
+            <select id="powS">
+              <option value="450-Watt">450-Watt</option>
+              <option value="500-Watt">500-Watt</option>
+              <option value="750-Watt">750-Watt</option>
+              <option value="850-Watt">850-Watt</option>
+              <option value="1000-Watt">1000-Watt</option>
+            </select>
+          </label>
+          <button onclick="removePow()">Remove</button>
+          <input type="button" onclick="addPowToCart()" value="Add">
+        </div>
+
+        <div id="cbBOX" class="BOXY disApp">
+          <h1>Cables</h1>
+          <h2>Bitrate Matters</h2>
+          <label>Select Brand
+            <select>
+              <option>CableMod</option>
+              <option>CableCreation</option>
+              <option>Amazon Basics</option>
+            </select>
+          </label>
+          <label>Type
+            <select id="CBT">
+              <option value="VGA">VGA</option>
+              <option value="DP">Display Port (DP)</option>
+              <option value="HDMI">HDMI</option>
+              <option value="ATX">ATX</option>
+              <option value="Ethernet">Ethernet</option>
+              <option value="Power">Power Cord</option>
+            </select>
+          </label>
+          <label>Specification
+            <select id="CBS">
+              <option value="2.0">2.0</option>
+              <option value="3.0">3.0</option>
+              <option value="4.0">4.0</option>
+              <option value="10m">10 meters</option>
+              <option value="20m">20 meters</option>
+            </select>
+          </label>
+          <button onclick="removeCB()">Remove</button>
+          <input type="button" onclick="addCbToCart()" value="Add">
+        </div>
+
+        <div id="frameBOX" class="BOXY disApp">
+          <h1>Computer Case</h1>
+          <label>Select Brand
+            <select>
+              <option>Dell</option>
+              <option>StarForge</option>
+              <option>AlienWare</option>
+            </select>
+          </label>
+          <label>Type
+            <select>
+              <option>Metal</option>
+              <option>Wooden Aesthetic</option>
+              <option>Compact</option>
+            </select>
+          </label>
+          <label>Specification
+            <select id="FS">
+              <option value="MidTower">Mid Tower</option>
+              <option value="SlimDesk">Slim-Desktop</option>
+              <option value="MiniPC">Mini PC</option>
+              <option value="NUX">NUC</option>
+              <option value="MiniTower">Mini Tower</option>
+            </select>
+          </label>
+          <button onclick="removeFrame()">Remove</button>
+          <input type="button" onclick="addFrameToCart()" value="Add">
+        </div>
+
+        <div id="monBOX" class="BOXY disApp">
+          <h1>Display Device</h1>
+          <label>Select Brand
+            <select>
+              <option>Samsung</option>
+              <option>Apple</option>
+              <option>Lenovo</option>
+            </select>
+          </label>
+          <label>Type
+            <select id="MonT">
+              <option value="HRR">High Refresh Rate</option>
+              <option value="OLED">OLED</option>
+              <option value="MChrome">Monochromatic</option>
+            </select>
+          </label>
+          <label>Specification
+            <select id="MonS">
+              <option value="18i">18 Inches</option>
+              <option value="22i">22 Inches</option>
+              <option value="28i">28 Inches</option>
+              <option value="UW">Ultra-wide</option>
+            </select>
+          </label>
+          <button onclick="removeMon()">Remove</button>
+          <input type="button" onclick="addMonToCart()" value="Add">
+        </div>
+
+        <div id="periBOX" class="BOXY disApp">
+          <h1>Peripherals</h1>
+          <h2>I/O Essentials</h2>
+          <label>Select Brand
+            <select>
+              <option>Logitech</option>
+              <option>Dell</option>
+              <option>Hewlett-Packard</option>
+            </select>
+          </label>
+          <label>KeyBoard
+            <select id="PeriK">
+              <option value="ME">Mechanical Keyboard</option>
+              <option value="SM">Single Membrane</option>
+              <option value="GK">Gaming Keyboard</option>
+            </select>
+          </label>
+          <label>Mouse
+            <select id="PeriM">
+              <option value="GM">Gaming Mouse</option>
+              <option value="LW">Light weight</option>
+              <option value="Ergo">Ergonomic</option>
+              <option value="LHS">Left Handed</option>
+            </select>
+          </label>
+          <button onclick="removePeri()">Remove</button>
+          <input type="button" onclick="addPeriToCart()" value="Add">
+        </div>
+      </div>
+
+      <div class="popupN" id="placeOrder">
+        <h2>Enter Details!</h2>
+        <label>Address
+          <input type="text" id="address" required>
+        </label>
+        <label>Phone Number:
+          <input type="number" id="phnNum" required>
+        </label>
+        <h2>Total Amount: <b id="priceAddHere"></b></h2>
+        <div class="btnGrid">
+          <button onclick="abortOrder()">Cancel</button>
+          <button class="btnOK" onclick="placeOrder()">Place Order!</button>
+        </div>
+        <h4 class="warn" id="warningForOrder">Please fill in the details!</h4>
+      </div>
+      <div class="openFinal" id="lastOne">
+        Order Placed
+      </div>
+      <div class="openFinal" id="emptyCart">
+        Cart is Empty!
+      </div>
+      <section class="total">
+        <div class="left">
+          Grand Total: <div style="display:inline" id="price">0.00</div>
+        </div>
+        <div class="right">
+          <button title="Place Order!" class="checkout" type="submit" onclick="finalCall()">CHECKOUT!</button>
+        </div>
+      </section>
+      <footer>
+        <div class="left">Created by Khanna, Anmol<sup>&#174;</sup></div>
+        <div class="right"><time>February 19, 2024</time></div>
+      </footer>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
